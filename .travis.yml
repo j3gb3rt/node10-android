@@ -1,0 +1,13 @@
+sudo: required
+language: generic
+services:
+  - docker
+branches:
+  only:
+  - master
+
+
+script:
+  - docker build -t jegbertmanh/node10-android:latest .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push jegbertmanh/node10-android:latest
