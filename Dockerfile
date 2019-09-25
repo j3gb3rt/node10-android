@@ -5,7 +5,7 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/shar
 
 RUN mkdir /usr/share/man/man1 \
  && apt-get -qq update && apt-get -qq -y -f upgrade \
- && apt-get -qq install -y openjdk-8-jdk lib32stdc++6 lib32z1 unzip > /dev/null
+ && apt-get -qq install -y openjdk-8-jdk git lib32stdc++6 lib32z1 unzip > /dev/null
 
 RUN npm install -q -g cordova
 
