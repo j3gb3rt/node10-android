@@ -5,7 +5,7 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/shar
 
 RUN mkdir /usr/share/man/man1 \
  && apt-get -qq update && apt-get -qq -y -f upgrade \
- && apt-get -qq install -y openjdk-8-jdk lib32stdc++6 lib32z1 unzip
+ && apt-get -qq install -y openjdk-8-jdk lib32stdc++6 lib32z1 unzip > /dev/null
 
 RUN npm install -q -g cordova
 
@@ -22,7 +22,7 @@ RUN echo "mkdir /usr/share/android-sdk-linux" \
     # && echo "sdkmanager --list" \
     # && sdkmanager --list \
     && echo 'sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" "docs" "tools"' \
-    && echo 'y' | sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" "tools"
+    && echo 'y' | sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" "tools" > /dev/null
     # removed docs
 
 # Setup gradle
